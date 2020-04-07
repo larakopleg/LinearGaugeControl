@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace LinearGauge
 {
-    
+
     public partial class MainWindow : Window
     {
         private Thickness originalMargin;
@@ -23,8 +23,6 @@ namespace LinearGauge
         public MainWindow()
         {
             InitializeComponent();
-            SliderData sd = new SliderData(10, 40);
-            DataContext = sd;
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -56,5 +54,5 @@ namespace LinearGauge
         }
     }
 
-   
+
 }

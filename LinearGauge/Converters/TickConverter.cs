@@ -17,16 +17,13 @@ namespace LinearGauge
                 int min = (int)values[0];
                 int max = (int)values[1];
                 int size = max - min;
-                Console.WriteLine("size= " + size);
 
                 if (size <= 50)
                 {
-                    Console.WriteLine("na 5");
                     return 5.0;
                 }
                 else
                 {
-                    Console.WriteLine("na 10");
                     return 10.0;
                 }
             }

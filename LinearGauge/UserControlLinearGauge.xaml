@@ -20,12 +20,12 @@
                     <RowDefinition Height="{Binding Path=Height, ElementName=slider}"/>
                 </Grid.RowDefinitions>
 
-                <TextBox Grid.Row="0" Background="#D79C9C" FontFamily="Century Gothic" Text="{Binding Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="{Binding Path=ActualHeight, ElementName=container, Converter={StaticResource FontSizeConverter}}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Slider x:Name="slider" Grid.Row="1" Value="{Binding Path=Value, Mode=TwoWay}" Foreground="Black" Minimum="{Binding Path=Min}" Maximum="{Binding Path=Max}" TickPlacement="TopLeft" AutoToolTipPlacement="BottomRight">
+                <TextBox x:Name="status" Grid.Row="0" Background="#D79C9C" FontFamily="Century Gothic" Text="{Binding Path=Value, RelativeSource={RelativeSource AncestorType=local:UserControlLinearGauge}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="{Binding Path=ActualHeight, ElementName=container, Converter={StaticResource FontSizeConverter}}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Slider x:Name="slider" Grid.Row="1" Value="{Binding Path=Value, Mode=TwoWay, RelativeSource={RelativeSource AncestorType=local:UserControlLinearGauge}}" Foreground="Black" Minimum="{Binding Path=MinValue, RelativeSource={RelativeSource AncestorType=local:UserControlLinearGauge}}" Maximum="{Binding Path=MaxValue, RelativeSource={RelativeSource AncestorType=local:UserControlLinearGauge}}" TickPlacement="TopLeft" AutoToolTipPlacement="BottomRight">
                     <Slider.TickFrequency>
                         <MultiBinding Converter="{StaticResource TickConverter}">
-                            <Binding Path="Min"/>
-                            <Binding Path="Max"/>
+                            <Binding Path="MinValue" RelativeSource="{RelativeSource AncestorType=local:UserControlLinearGauge}"/>
+                            <Binding Path="MaxValue" RelativeSource="{RelativeSource AncestorType=local:UserControlLinearGauge}"/>
                         </MultiBinding>
                     </Slider.TickFrequency>
                 </Slider>

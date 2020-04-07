@@ -8,6 +8,6 @@
         Title="MainWindow" Height="450" Width="800" SizeChanged="Window_SizeChanged">
 
     <Grid>
-        <local:UserControlLinearGauge x:Name="LinearGauge" MinValue="{Binding Path=Min}" MaxValue="{Binding Path=Max}" Margin="270,170,358,142"/>
+        <local:UserControlLinearGauge x:Name="LinearGauge" Value="0" MinValue="10" MaxValue="40" Margin="270,170,358,142"/>
     </Grid>
 </Window>

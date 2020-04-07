@@ -56,7 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\FontSizeConverter.cs" />
-    <Compile Include="Model\SliderData.cs" />
     <Compile Include="Converters\TickConverter.cs" />
     <Compile Include="UserControlLinearGauge.xaml.cs">
       <DependentUpon>UserControlLinearGauge.xaml</DependentUpon>
